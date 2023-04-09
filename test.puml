@@ -1,0 +1,744 @@
+@startuml
+class com.klbc.sys.bean.Food {
+- int id
+- String foodName
+- int foodTypeId
+- double price
+- String remark
+- String img
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+- FoodType foodType
+- Integer buyNum
++ int getId()
++ void setId(int)
++ String getFoodName()
++ void setFoodName(String)
++ int getFoodTypeId()
++ void setFoodTypeId(int)
++ double getPrice()
++ void setPrice(double)
++ String getRemark()
++ void setRemark(String)
++ String getImg()
++ void setImg(String)
++ int getCreatedBy()
++ void setCreatedBy(int)
++ Date getCreationDate()
++ void setCreationDate(Date)
++ int getModifyBy()
++ void setModifyBy(int)
++ Date getModifyDate()
++ void setModifyDate(Date)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ FoodType getFoodType()
++ void setFoodType(FoodType)
++ Integer getBuyNum()
++ void setBuyNum(Integer)
++ String toString()
+}
+class com.klbc.app.dao.OrderDaoImpl {
++ void order(Order,Map<Integer,Integer>,Integer)
++ List<Order> findDetails(Integer)
++ List<OrderDetail> findByOrderId(Integer)
++ Order findById(int)
++ void pay(Order)
++ void deleteOrder(Order)
+}
+class com.klbc.sys.service.UserServiceImpl {
+~ UserDao UserDao
++ User findByLoginNameAndPass(String,String)
+}
+class com.klbc.app.service.OrderServiceImpl {
+- OrderDaoImpl orderDao
++ void order(Map<Integer,Integer>,String,Integer)
++ List<Order> findDetails(Integer)
++ Order findById(int)
++ void pay(Order)
++ void deleteOrder(Order)
+}
+class com.klbc.app.dao.Basedao {
+- {static} String driver
+- {static} String url
+- {static} String username
+- {static} String password
++ {static} Connection getConnection()
++ {static} ResultSet execute(PreparedStatement,Connection,String,Object[],ResultSet)
++ {static} int update(PreparedStatement,Connection,String,Object[])
++ {static} boolean closeResource(PreparedStatement,Connection,ResultSet)
+}
+class com.klbc.sys.dao.FoodDaoImpl {
++ List<Food> find(String,String)
++ Food findById(int)
++ void update(Food)
++ Food findByFoodName(String)
++ void save(Food)
+}
+interface com.klbc.sys.service.OrderService {
+~ List<Order> find()
+~ Order findById(int)
+~ void update(Order)
+~ List<Order> findMonth()
+~ List<Order> findWeek()
+~ List<Order> findDay()
+}
+interface com.klbc.app.dao.OrderDao {
+~ void order(Order,Map<Integer,Integer>,Integer)
+~ List<Order> findDetails(Integer)
+~ List<OrderDetail> findByOrderId(Integer)
+~ Order findById(int)
+~ void pay(Order)
+~ void deleteOrder(Order)
+}
+class com.klbc.app.pojo.PageBean {
+- List<E> list
+- Integer currPage
+- Integer pageSize
+- Integer totalPage
+- Integer totalCount
++ List<E> getList()
++ void setList(List<E>)
++ Integer getCurrPage()
++ void setCurrPage(Integer)
++ Integer getPageSize()
++ void setPageSize(Integer)
++ Integer getTotalPage()
++ Integer getTotalCount()
++ void setTotalCount(Integer)
+}
+interface com.klbc.app.dao.FoodTypeDao {
+~ List<FoodType> findAll()
+}
+class com.klbc.sys.bean.Order {
+- Integer id
+- String orderCode
+- Double totalPrice
+- Integer status
+- Date orderTime
+- String payTime
+- Date updateTime
+- Integer disabled
+- Integer userId
+- OrderDetail orderDetail
+- User user
+- Food food
++ User getUser()
++ void setUser(User)
++ Food getFood()
++ void setFood(Food)
++ Integer getId()
++ void setId(Integer)
++ String getOrderCode()
++ void setOrderCode(String)
++ Double getTotalPrice()
++ void setTotalPrice(Double)
++ Integer getStatus()
++ void setStatus(Integer)
++ Date getOrderTime()
++ void setOrderTime(Date)
++ String getPayTime()
++ void setPayTime(String)
++ Date getUpdateTime()
++ void setUpdateTime(Date)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ OrderDetail getOrderDetail()
++ void setOrderDetail(OrderDetail)
++ String toString()
++ Integer getUserId()
++ void setUserId(Integer)
+}
+class com.klbc.sys.dao.FoodTypeDaoImpl {
++ List<FoodType> find(String,String)
++ FoodType findByFoodName(String)
++ void save(FoodType)
++ FoodType findById(int)
++ Object update(FoodType)
+}
+class com.klbc.app.dao.FoodDaoImpl {
++ List<Food> findByFoodTypeId(Integer)
++ Food findByFoodId(Integer)
++ int getFoodCount(int)
+}
+interface com.klbc.app.service.FoodService {
+~ List<Food> findByFoodTypeId(Integer)
+~ Food findByFoodId(Integer)
+~ int getFoodCount(int)
+}
+class com.klbc.app.servlet.loginServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+interface com.klbc.sys.dao.FoodDao {
+~ List<Food> find(String,String)
+~ Food findById(int)
+~ void update(Food)
+~ Food findByFoodName(String)
+~ void save(Food)
+}
+interface com.klbc.sys.dao.UserDao {
+~ User findByLoginNameAndPass(String,String)
++ com.klbc.app.pojo.User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<com.klbc.app.pojo.User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,com.klbc.app.pojo.User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,com.klbc.app.pojo.User)
++ com.klbc.app.pojo.User getUserById(Connection,String)
+}
+class com.klbc.sys.service.FoodTypeServiceImpl {
+~ FoodTypeDao foodTypeDao
++ List<FoodType> find(String,String)
++ FoodType findByFoodName(String)
++ void save(FoodType)
++ FoodType findById(int)
++ void update(FoodType)
+}
+interface com.klbc.app.dao.CommentDao {
+~ List<Comment> findByFoodId(int)
+~ void comment(int,int,String)
+}
+class com.klbc.sys.servlet.orderServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.dao.JDBCDao {
++ {static} void insertOrDeleteOrUpdate(String)
++ {static} List<Map<String,Object>> select(String)
++ {static} List<Map<String,Object>> returnResultToList(ResultSet)
+}
+interface com.klbc.sys.service.FoodTypeService {
+~ List<FoodType> find(String,String)
+~ FoodType findByFoodName(String)
+~ void save(FoodType)
+~ FoodType findById(int)
+~ void update(FoodType)
+}
+interface com.klbc.sys.dao.FoodTypeDao {
+~ List<FoodType> find(String,String)
+~ FoodType findByFoodName(String)
+~ void save(FoodType)
+~ FoodType findById(int)
+~ Object update(FoodType)
+}
+interface com.klbc.sys.service.UserService {
+~ User findByLoginNameAndPass(String,String)
+}
+class com.klbc.sys.service.OrderServiceImpl {
+~ OrderDao orderDao
++ List<Order> find()
++ Order findById(int)
++ void update(Order)
++ List<Order> findMonth()
++ List<Order> findWeek()
++ List<Order> findDay()
+}
+class com.klbc.util.JDBCUtil {
+- {static} String driver
+- {static} String url
+- {static} String username
+- {static} String password
++ {static} Connection getConnection()
++ {static} ResultSet execute(PreparedStatement,Connection,String,Object[],ResultSet)
++ {static} int update(PreparedStatement,Connection,String,Object[])
++ {static} boolean close(ResultSet,PreparedStatement,Connection)
+}
+interface com.klbc.app.service.UserService {
+~ User findByLoginNameAndPass(String,String)
+}
+class com.klbc.app.servlet.LoginOutServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.bean.FoodType {
+- int id
+- String typeName
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
++ int getId()
++ void setId(int)
++ String getTypeName()
++ void setTypeName(String)
++ int getCreatedBy()
++ void setCreatedBy(int)
++ Date getCreationDate()
++ void setCreationDate(Date)
++ int getModifyBy()
++ void setModifyBy(int)
++ Date getModifyDate()
++ void setModifyDate(Date)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ String toString()
+}
+class com.klbc.sys.util.MyUTF {
++ {static} String getNewString(String)
+}
+class com.klbc.sys.bean.OrderDetail {
+- Integer id
+- Integer orderId
+- Integer foodId
+- Integer buyNum
+- Integer disabled
+- Food food
++ Integer getId()
++ void setId(Integer)
++ Integer getOrderId()
++ void setOrderId(Integer)
++ Integer getFoodId()
++ void setFoodId(Integer)
++ Integer getBuyNum()
++ void setBuyNum(Integer)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ Food getFood()
++ void setFood(Food)
++ String toString()
+}
+class com.klbc.app.dao.CommentDaoImpl {
++ List<Comment> findByFoodId(int)
++ void comment(int,int,String)
+}
+class com.klbc.app.pojo.Food {
+- int id
+- String foodName
+- int foodTypeId
+- double price
+- String remark
+- String img
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+- FoodType foodType
+- Integer buyNum
++ int getId()
++ void setId(int)
++ String getFoodName()
++ void setFoodName(String)
++ int getFoodTypeId()
++ void setFoodTypeId(int)
++ double getPrice()
++ void setPrice(double)
++ String getRemark()
++ void setRemark(String)
++ String getImg()
++ void setImg(String)
++ int getCreatedBy()
++ void setCreatedBy(int)
++ Date getCreationDate()
++ void setCreationDate(Date)
++ int getModifyBy()
++ void setModifyBy(int)
++ Date getModifyDate()
++ void setModifyDate(Date)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ FoodType getFoodType()
++ void setFoodType(FoodType)
++ Integer getBuyNum()
++ void setBuyNum(Integer)
++ String toString()
+}
+class com.klbc.sys.dao.UserDaoImpl {
++ User findByLoginNameAndPass(String,String)
++ com.klbc.app.pojo.User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<com.klbc.app.pojo.User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,com.klbc.app.pojo.User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,com.klbc.app.pojo.User)
++ com.klbc.app.pojo.User getUserById(Connection,String)
+}
+class com.klbc.sys.bean.User {
+- int id
+- String userCode
+- String userName
+- String userPassword
+- Integer gender
+- Date birthday
+- String phone
+- String address
+- Integer userRole
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer age
+- String userRoleName
++ String getUserRoleName()
++ void setUserRoleName(String)
++ Integer getAge()
++ int getId()
++ void setId(int)
++ String getUserCode()
++ void setUserCode(String)
++ String getUserName()
++ void setUserName(String)
++ String getUserPassword()
++ void setUserPassword(String)
++ Integer getGender()
++ void setGender(Integer)
++ Date getBirthday()
++ void setBirthday(Date)
++ String getPhone()
++ void setPhone(String)
++ String getAddress()
++ void setAddress(String)
++ Integer getUserRole()
++ void setUserRole(Integer)
++ int getCreatedBy()
++ void setCreatedBy(int)
++ Date getCreationDate()
++ void setCreationDate(Date)
++ int getModifyBy()
++ void setModifyBy(int)
++ Date getModifyDate()
++ void setModifyDate(Date)
+}
+class com.klbc.sys.servlet.saleListService {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+interface com.klbc.app.dao.FoodDao {
+~ List<Food> findByFoodTypeId(Integer)
+~ Food findByFoodId(Integer)
+~ int getFoodCount(int)
+}
+interface com.klbc.app.service.OrderService {
+~ void order(Map<Integer,Integer>,String,Integer)
+~ List<Order> findDetails(Integer)
+~ Order findById(int)
+~ void pay(Order)
+~ void deleteOrder(Order)
+}
+interface com.klbc.sys.dao.OrderDao {
+~ List<Order> find()
+~ Order findById(int)
+~ void update(Order)
+~ List<Order> findMonth()
+~ List<Order> findWeek()
+~ List<Order> findDay()
+}
+class com.klbc.app.servlet.commentServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.service.UserServiceImpl {
+~ UserDaoImpl userDao
++ User findByLoginNameAndPass(String,String)
+}
+class com.klbc.app.pojo.Comment {
+- Integer id
+- Integer userId
+- Integer foodId
+- String content
+- Integer disabled
+- Date createTime
+- User user
++ Integer getId()
++ void setId(Integer)
++ Integer getNameId()
++ void setNameId(Integer)
++ Integer getFoodId()
++ void setFoodId(Integer)
++ String getContent()
++ void setContent(String)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ Date getCreateTime()
++ void setCreateTime(Date)
++ String toString()
++ User getUser()
++ void setUser(User)
+}
+interface com.klbc.sys.service.FoodService {
+~ List<Food> find(String,String)
+~ Food findById(int)
+~ void update(Food)
+~ Food findByFoodName(String)
+~ void save(Food)
+}
+class com.klbc.app.dao.FoodTypeDaoImpl {
++ List<FoodType> findAll()
+}
+class com.klbc.app.pojo.Feedback {
+}
+class com.klbc.app.pojo.User {
+- int id
+- String userCode
+- String userName
+- String userPassword
+- Integer gender
+- Date birthday
+- String phone
+- String address
+- Integer userRole
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer age
+- String userRoleName
++ String getUserRoleName()
++ void setUserRoleName(String)
++ Integer getAge()
++ int getId()
++ void setId(int)
++ String getUserCode()
++ void setUserCode(String)
++ String getUserName()
++ void setUserName(String)
++ String getUserPassword()
++ void setUserPassword(String)
++ Integer getGender()
++ void setGender(Integer)
++ Date getBirthday()
++ void setBirthday(Date)
++ String getPhone()
++ void setPhone(String)
++ String getAddress()
++ void setAddress(String)
++ Integer getUserRole()
++ void setUserRole(Integer)
++ int getCreatedBy()
++ void setCreatedBy(int)
++ Date getCreationDate()
++ void setCreationDate(Date)
++ int getModifyBy()
++ void setModifyBy(int)
++ Date getModifyDate()
++ void setModifyDate(Date)
+}
+class com.klbc.util.PageUtil {
+- int pageNumber
+- int pageSum
+- int pageIndex
+- int pageSize
+- List<T> list
++ int getPageNumber()
++ void setPageNumber(int)
++ int getPageSum()
++ void setPageSum(int)
++ int getPageIndex()
++ void setPageIndex(int)
++ int getPageSize()
++ void setPageSize(int)
++ List<T> getList()
++ void setList(List<T>)
+}
+class com.klbc.sys.servlet.foodTypeListServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.indexServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.service.CommentServiceImpl {
+~ CommentDaoImpl commentDao
++ List<Comment> findByFoodId(int)
++ void comment(int,int,String)
+}
+class com.klbc.app.service.FoodTypeServiceImpl {
+- FoodTypeDaoImpl foodTypeDao
++ List<FoodType> findAll()
+}
+class com.klbc.sys.dao.OrderDaoImpl {
++ List<Order> find()
++ Order findById(int)
++ void update(Order)
++ List<Order> findMonth()
++ List<Order> findWeek()
++ List<Order> findDay()
+}
+class com.klbc.app.pojo.FoodType {
+- int id
+- String typeName
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
++ int getId()
++ void setId(int)
++ String getTypeName()
++ void setTypeName(String)
++ int getCreatedBy()
++ void setCreatedBy(int)
++ Date getCreationDate()
++ void setCreationDate(Date)
++ int getModifyBy()
++ void setModifyBy(int)
++ Date getModifyDate()
++ void setModifyDate(Date)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ String toString()
+}
+class com.klbc.app.servlet.orderServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+interface com.klbc.app.service.CommentService {
+~ List<Comment> findByFoodId(int)
+~ void comment(int,int,String)
+}
+class com.klbc.sys.servlet.indexServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.util.ServletContextListen {
++ void contextDestroyed(ServletContextEvent)
++ void contextInitialized(ServletContextEvent)
+}
+interface com.klbc.app.service.FoodTypeService {
+~ List<FoodType> findAll()
+}
+class com.klbc.sys.service.FoodServiceImpl {
+~ FoodDao foodDao
++ List<Food> find(String,String)
++ Food findById(int)
++ void update(Food)
++ Food findByFoodName(String)
++ void save(Food)
+}
+class com.klbc.app.pojo.Order {
+- Integer id
+- String orderCode
+- Double totalPrice
+- Integer status
+- Date orderTime
+- Date payTime
+- Date updateTime
+- Integer disabled
+- Integer userId
+- List<OrderDetail> orderDetail
++ Integer getId()
++ void setId(Integer)
++ String getOrderCode()
++ void setOrderCode(String)
++ Double getTotalPrice()
++ void setTotalPrice(Double)
++ Integer getStatus()
++ void setStatus(Integer)
++ Date getOrderTime()
++ void setOrderTime(Date)
++ Date getPayTime()
++ void setPayTime(Date)
++ Date getUpdateTime()
++ void setUpdateTime(Date)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ List<OrderDetail> getOrderDetail()
++ void setOrderDetail(List<OrderDetail>)
++ String toString()
++ Integer getUserId()
++ void setUserId(Integer)
+}
+interface com.klbc.app.dao.UserDao {
++ User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,User)
++ User getUserById(Connection,String)
+~ User findByLoginNameAndPass(String,String)
+}
+class com.klbc.app.servlet.ShopCarServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.service.FoodServiceImpl {
+- FoodDaoImpl FoodDao
++ List<Food> findByFoodTypeId(Integer)
++ Food findByFoodId(Integer)
++ int getFoodCount(int)
+}
+class com.klbc.app.pojo.OrderDetail {
+- Integer id
+- Integer orderId
+- Integer foodId
+- Integer buyNum
+- Integer disabled
+- Food food
++ Integer getId()
++ void setId(Integer)
++ Integer getOrderId()
++ void setOrderId(Integer)
++ Integer getFoodId()
++ void setFoodId(Integer)
++ Integer getBuyNum()
++ void setBuyNum(Integer)
++ Integer getDisabled()
++ void setDisabled(Integer)
++ Food getFood()
++ void setFood(Food)
++ String toString()
+}
+class com.klbc.sys.servlet.LoginServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.foodServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.dao.UserDaoImpl {
++ User findByLoginNameAndPass(String,String)
++ User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,User)
++ User getUserById(Connection,String)
+}
+
+
+com.klbc.app.dao.OrderDao <|.. com.klbc.app.dao.OrderDaoImpl
+com.klbc.sys.service.UserService <|.. com.klbc.sys.service.UserServiceImpl
+com.klbc.app.service.OrderService <|.. com.klbc.app.service.OrderServiceImpl
+com.klbc.sys.dao.FoodDao <|.. com.klbc.sys.dao.FoodDaoImpl
+java.io.Serializable <|.. com.klbc.app.pojo.PageBean
+com.klbc.sys.dao.FoodTypeDao <|.. com.klbc.sys.dao.FoodTypeDaoImpl
+com.klbc.app.dao.FoodDao <|.. com.klbc.app.dao.FoodDaoImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.loginServlet
+com.klbc.sys.service.FoodTypeService <|.. com.klbc.sys.service.FoodTypeServiceImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.orderServlet
+com.klbc.sys.service.OrderService <|.. com.klbc.sys.service.OrderServiceImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.LoginOutServlet
+com.klbc.app.dao.CommentDao <|.. com.klbc.app.dao.CommentDaoImpl
+com.klbc.sys.dao.UserDao <|.. com.klbc.sys.dao.UserDaoImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.saleListService
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.commentServlet
+com.klbc.app.service.UserService <|.. com.klbc.app.service.UserServiceImpl
+com.klbc.app.dao.FoodTypeDao <|.. com.klbc.app.dao.FoodTypeDaoImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.foodTypeListServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.indexServlet
+com.klbc.app.service.CommentService <|.. com.klbc.app.service.CommentServiceImpl
+com.klbc.app.service.FoodTypeService <|.. com.klbc.app.service.FoodTypeServiceImpl
+com.klbc.sys.dao.OrderDao <|.. com.klbc.sys.dao.OrderDaoImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.orderServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.indexServlet
+javax.servlet.ServletContextListener <|.. com.klbc.sys.util.ServletContextListen
+com.klbc.sys.service.FoodService <|.. com.klbc.sys.service.FoodServiceImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.ShopCarServlet
+com.klbc.app.service.FoodService <|.. com.klbc.app.service.FoodServiceImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.LoginServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.foodServlet
+com.klbc.app.dao.UserDao <|.. com.klbc.app.dao.UserDaoImpl
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class com.klbc.sys.servlet.indexServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+
+
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.indexServlet
+@enduml

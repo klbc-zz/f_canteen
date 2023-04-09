@@ -1,0 +1,76 @@
+@startuml
+class com.klbc.sys.dao.FoodTypeDaoImpl {
++ List<FoodType> find(String,String)
++ FoodType findByFoodName(String)
++ void save(FoodType)
++ FoodType findById(int)
++ Object update(FoodType)
+}
+class com.klbc.sys.dao.FoodDaoImpl {
++ List<Food> find(String,String)
++ Food findById(int)
++ void update(Food)
++ Food findByFoodName(String)
++ void save(Food)
+}
+interface com.klbc.sys.dao.FoodTypeDao {
+~ List<FoodType> find(String,String)
+~ FoodType findByFoodName(String)
+~ void save(FoodType)
+~ FoodType findById(int)
+~ Object update(FoodType)
+}
+interface com.klbc.sys.dao.UserDao {
+~ User findByLoginNameAndPass(String,String)
++ User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,User)
++ User getUserById(Connection,String)
+~ int getUserByName(Connection,String)
+}
+interface com.klbc.sys.dao.FoodDao {
+~ List<Food> find(String,String)
+~ Food findById(int)
+~ void update(Food)
+~ Food findByFoodName(String)
+~ void save(Food)
+}
+interface com.klbc.sys.dao.OrderDao {
+~ List<Order> find()
+~ Order findById(int)
+~ void update(Order)
+~ List<Order> findMonth()
+~ List<Order> findWeek()
+~ List<Order> findDay()
+}
+class com.klbc.sys.dao.OrderDaoImpl {
++ List<Order> find()
++ Order findById(int)
++ void update(Order)
++ List<Order> findMonth()
++ List<Order> findWeek()
++ List<Order> findDay()
+}
+class com.klbc.sys.dao.UserDaoImpl {
++ User findByLoginNameAndPass(String,String)
++ User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,User)
++ User getUserById(Connection,String)
++ int getUserByName(Connection,String)
+}
+
+
+com.klbc.sys.dao.FoodTypeDao <|.. com.klbc.sys.dao.FoodTypeDaoImpl
+com.klbc.sys.dao.FoodDao <|.. com.klbc.sys.dao.FoodDaoImpl
+com.klbc.sys.dao.OrderDao <|.. com.klbc.sys.dao.OrderDaoImpl
+com.klbc.sys.dao.UserDao <|.. com.klbc.sys.dao.UserDaoImpl
+@enduml

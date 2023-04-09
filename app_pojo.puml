@@ -1,0 +1,84 @@
+@startuml
+class com.klbc.app.pojo.PageBean {
+- List<E> list
+- Integer currPage
+- Integer pageSize
+- Integer totalPage
+- Integer totalCount
+}
+class com.klbc.app.pojo.Feedback {
+}
+class com.klbc.app.pojo.User {
+- int id
+- String userCode
+- String userName
+- String userPassword
+- Integer gender
+- Date birthday
+- String phone
+- String address
+- Integer userRole
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer age
+- String userRoleName
+}
+class com.klbc.app.pojo.Order {
+- Integer id
+- String orderCode
+- Double totalPrice
+- Integer status
+- Date orderTime
+- Date payTime
+- Date updateTime
+- Integer disabled
+- Integer userId
+- List<OrderDetail> orderDetail
+}
+class com.klbc.app.pojo.Food {
+- int id
+- String foodName
+- int foodTypeId
+- double price
+- String remark
+- String img
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+- FoodType foodType
+- Integer buyNum
+}
+class com.klbc.app.pojo.OrderDetail {
+- Integer id
+- Integer orderId
+- Integer foodId
+- Integer buyNum
+- Integer disabled
+- Food food
+}
+class com.klbc.app.pojo.FoodType {
+- int id
+- String typeName
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+}
+class com.klbc.app.pojo.Comment {
+- Integer id
+- Integer userId
+- Integer foodId
+- String content
+- Integer disabled
+- Date createTime
+- User user
+}
+
+
+java.io.Serializable <|.. com.klbc.app.pojo.PageBean
+@enduml

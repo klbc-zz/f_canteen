@@ -1,0 +1,171 @@
+@startuml
+class com.klbc.app.dao.OrderDaoImpl {
+}
+class com.klbc.app.service.OrderServiceImpl {
+- OrderDaoImpl orderDao
+}
+class com.klbc.app.dao.Basedao {
+- {static} String driver
+- {static} String url
+- {static} String username
+- {static} String password
+}
+interface com.klbc.app.dao.FoodDao {
+}
+interface com.klbc.app.service.OrderService {
+}
+class com.klbc.app.servlet.commentServlet {
+- {static} long serialVersionUID
+}
+class com.klbc.app.service.UserServiceImpl {
+~ UserDaoImpl userDao
+}
+interface com.klbc.app.dao.OrderDao {
+}
+class com.klbc.app.pojo.Comment {
+- Integer id
+- Integer userId
+- Integer foodId
+- String content
+- Integer disabled
+- Date createTime
+- User user
+}
+class com.klbc.app.pojo.PageBean {
+- List<E> list
+- Integer currPage
+- Integer pageSize
+- Integer totalPage
+- Integer totalCount
+}
+class com.klbc.app.pojo.Feedback {
+}
+interface com.klbc.app.dao.FoodTypeDao {
+}
+class com.klbc.app.dao.FoodTypeDaoImpl {
+}
+class com.klbc.app.pojo.User {
+- int id
+- String userCode
+- String userName
+- String userPassword
+- Integer gender
+- Date birthday
+- String phone
+- String address
+- Integer userRole
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer age
+- String userRoleName
+}
+class com.klbc.app.dao.FoodDaoImpl {
+}
+interface com.klbc.app.service.FoodService {
+}
+class com.klbc.app.servlet.loginServlet {
+- {static} long serialVersionUID
+}
+class com.klbc.app.servlet.indexServlet {
+- {static} long serialVersionUID
+}
+class com.klbc.app.service.CommentServiceImpl {
+~ CommentDaoImpl commentDao
+}
+interface com.klbc.app.dao.CommentDao {
+}
+class com.klbc.app.service.FoodTypeServiceImpl {
+- FoodTypeDaoImpl foodTypeDao
+}
+class com.klbc.app.pojo.FoodType {
+- int id
+- String typeName
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+}
+class com.klbc.app.dao.JDBCDao {
+}
+class com.klbc.app.servlet.orderServlet {
+- {static} long serialVersionUID
+}
+interface com.klbc.app.service.UserService {
+}
+class com.klbc.app.servlet.LoginOutServlet {
+- {static} long serialVersionUID
+}
+interface com.klbc.app.service.CommentService {
+}
+interface com.klbc.app.service.FoodTypeService {
+}
+class com.klbc.app.dao.CommentDaoImpl {
+}
+class com.klbc.app.pojo.Food {
+- int id
+- String foodName
+- int foodTypeId
+- double price
+- String remark
+- String img
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+- FoodType foodType
+- Integer buyNum
+}
+class com.klbc.app.pojo.Order {
+- Integer id
+- String orderCode
+- Double totalPrice
+- Integer status
+- Date orderTime
+- Date payTime
+- Date updateTime
+- Integer disabled
+- Integer userId
+- List<OrderDetail> orderDetail
+}
+interface com.klbc.app.dao.UserDao {
+}
+class com.klbc.app.servlet.ShopCarServlet {
+- {static} long serialVersionUID
+}
+class com.klbc.app.service.FoodServiceImpl {
+- FoodDaoImpl FoodDao
+}
+class com.klbc.app.pojo.OrderDetail {
+- Integer id
+- Integer orderId
+- Integer foodId
+- Integer buyNum
+- Integer disabled
+- Food food
+}
+class com.klbc.app.dao.UserDaoImpl {
+}
+
+
+com.klbc.app.dao.OrderDao <|.. com.klbc.app.dao.OrderDaoImpl
+com.klbc.app.service.OrderService <|.. com.klbc.app.service.OrderServiceImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.commentServlet
+com.klbc.app.service.UserService <|.. com.klbc.app.service.UserServiceImpl
+java.io.Serializable <|.. com.klbc.app.pojo.PageBean
+com.klbc.app.dao.FoodTypeDao <|.. com.klbc.app.dao.FoodTypeDaoImpl
+com.klbc.app.dao.FoodDao <|.. com.klbc.app.dao.FoodDaoImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.loginServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.indexServlet
+com.klbc.app.service.CommentService <|.. com.klbc.app.service.CommentServiceImpl
+com.klbc.app.service.FoodTypeService <|.. com.klbc.app.service.FoodTypeServiceImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.orderServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.LoginOutServlet
+com.klbc.app.dao.CommentDao <|.. com.klbc.app.dao.CommentDaoImpl
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.ShopCarServlet
+com.klbc.app.service.FoodService <|.. com.klbc.app.service.FoodServiceImpl
+com.klbc.app.dao.UserDao <|.. com.klbc.app.dao.UserDaoImpl
+@enduml

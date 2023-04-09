@@ -1,0 +1,62 @@
+@startuml
+class com.klbc.app.service.OrderServiceImpl {
+- OrderDaoImpl orderDao
++ void order(Map<Integer,Integer>,String,Integer)
++ List<Order> findDetails(Integer)
++ Order findById(int)
++ void pay(Order)
++ void deleteOrder(Order)
+}
+interface com.klbc.app.service.FoodService {
+~ List<Food> findByFoodTypeId(Integer)
+~ Food findByFoodId(Integer)
+~ int getFoodCount(int)
+}
+interface com.klbc.app.service.OrderService {
+~ void order(Map<Integer,Integer>,String,Integer)
+~ List<Order> findDetails(Integer)
+~ Order findById(int)
+~ void pay(Order)
+~ void deleteOrder(Order)
+}
+interface com.klbc.app.service.UserService {
+~ User findByLoginNameAndPass(String,String)
+~ Boolean selectUseName(String)
+~ int addUser(User)
+}
+class com.klbc.app.service.FoodServiceImpl {
+- FoodDaoImpl FoodDao
++ List<Food> findByFoodTypeId(Integer)
++ Food findByFoodId(Integer)
++ int getFoodCount(int)
+}
+class com.klbc.app.service.UserServiceImpl {
+~ UserDaoImpl userDao
++ User findByLoginNameAndPass(String,String)
++ Boolean selectUseName(String)
++ int addUser(User)
+}
+class com.klbc.app.service.CommentServiceImpl {
+~ CommentDaoImpl commentDao
++ List<Comment> findByFoodId(int)
++ void comment(int,int,String)
+}
+interface com.klbc.app.service.CommentService {
+~ List<Comment> findByFoodId(int)
+~ void comment(int,int,String)
+}
+class com.klbc.app.service.FoodTypeServiceImpl {
+- FoodTypeDaoImpl foodTypeDao
++ List<FoodType> findAll()
+}
+interface com.klbc.app.service.FoodTypeService {
+~ List<FoodType> findAll()
+}
+
+
+com.klbc.app.service.OrderService <|.. com.klbc.app.service.OrderServiceImpl
+com.klbc.app.service.FoodService <|.. com.klbc.app.service.FoodServiceImpl
+com.klbc.app.service.UserService <|.. com.klbc.app.service.UserServiceImpl
+com.klbc.app.service.CommentService <|.. com.klbc.app.service.CommentServiceImpl
+com.klbc.app.service.FoodTypeService <|.. com.klbc.app.service.FoodTypeServiceImpl
+@enduml

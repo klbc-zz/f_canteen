@@ -1,0 +1,65 @@
+@startuml
+class com.klbc.sys.bean.Food {
+- int id
+- String foodName
+- int foodTypeId
+- double price
+- String remark
+- String img
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+- FoodType foodType
+- Integer buyNum
+}
+class com.klbc.sys.bean.User {
+- Integer id
+- String userCode
+- String userName
+- String userPassword
+- Integer gender
+- Date birthday
+- String phone
+- String address
+- Integer userRole
+- String createdBy
+- Date creationDate
+- String modifyBy
+- Date modifyDate
+- Integer age
+- String userRoleName
+}
+class com.klbc.sys.bean.OrderDetail {
+- Integer id
+- Integer orderId
+- Integer foodId
+- Integer buyNum
+- Integer disabled
+- Food food
+}
+class com.klbc.sys.bean.Order {
+- Integer id
+- String orderCode
+- Double totalPrice
+- Integer status
+- Date orderTime
+- String payTime
+- Date updateTime
+- Integer disabled
+- Integer userId
+- OrderDetail orderDetail
+- User user
+- Food food
+}
+class com.klbc.sys.bean.FoodType {
+- int id
+- String typeName
+- int createdBy
+- Date creationDate
+- int modifyBy
+- Date modifyDate
+- Integer disabled
+}
+@enduml

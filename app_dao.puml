@@ -1,0 +1,88 @@
+@startuml
+class com.klbc.app.dao.JDBCDao {
++ {static} void insertOrDeleteOrUpdate(String)
++ {static} List<Map<String,Object>> select(String)
++ {static} List<Map<String,Object>> returnResultToList(ResultSet)
+}
+class com.klbc.app.dao.OrderDaoImpl {
++ void order(Order,Map<Integer,Integer>,Integer)
++ List<Order> findDetails(Integer)
++ List<OrderDetail> findByOrderId(Integer)
++ Order findById(int)
++ void pay(Order)
++ void deleteOrder(Order)
+}
+class com.klbc.app.dao.Basedao {
+- {static} String driver
+- {static} String url
+- {static} String username
+- {static} String password
++ {static} Connection getConnection()
++ {static} ResultSet execute(PreparedStatement,Connection,String,Object[],ResultSet)
++ {static} int update(PreparedStatement,Connection,String,Object[])
++ {static} boolean closeResource(PreparedStatement,Connection,ResultSet)
+}
+interface com.klbc.app.dao.FoodDao {
+~ List<Food> findByFoodTypeId(Integer)
+~ Food findByFoodId(Integer)
+~ int getFoodCount(int)
+}
+interface com.klbc.app.dao.OrderDao {
+~ void order(Order,Map<Integer,Integer>,Integer)
+~ List<Order> findDetails(Integer)
+~ List<OrderDetail> findByOrderId(Integer)
+~ Order findById(int)
+~ void pay(Order)
+~ void deleteOrder(Order)
+}
+interface com.klbc.app.dao.FoodTypeDao {
+~ List<FoodType> findAll()
+}
+class com.klbc.app.dao.FoodTypeDaoImpl {
++ List<FoodType> findAll()
+}
+class com.klbc.app.dao.CommentDaoImpl {
++ List<Comment> findByFoodId(int)
++ void comment(int,int,String)
+}
+class com.klbc.app.dao.FoodDaoImpl {
++ List<Food> findByFoodTypeId(Integer)
++ Food findByFoodId(Integer)
++ int getFoodCount(int)
+}
+interface com.klbc.app.dao.UserDao {
++ User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,User)
++ User getUserById(Connection,String)
+~ User findByLoginNameAndPass(String,String)
+~ Boolean selectUseName(Connection,String)
+}
+interface com.klbc.app.dao.CommentDao {
+~ List<Comment> findByFoodId(int)
+~ void comment(int,int,String)
+}
+class com.klbc.app.dao.UserDaoImpl {
++ User findByLoginNameAndPass(String,String)
++ Boolean selectUseName(Connection,String)
++ User getLoginUser(Connection,String)
++ int updatePwd(Connection,int,String)
++ int getUserCount(Connection,String,int)
++ List<User> getUserList(Connection,String,int,int,int)
++ int addUser(Connection,User)
++ int deleteUserById(Connection,Integer)
++ int modify(Connection,User)
++ User getUserById(Connection,String)
+}
+
+
+com.klbc.app.dao.OrderDao <|.. com.klbc.app.dao.OrderDaoImpl
+com.klbc.app.dao.FoodTypeDao <|.. com.klbc.app.dao.FoodTypeDaoImpl
+com.klbc.app.dao.CommentDao <|.. com.klbc.app.dao.CommentDaoImpl
+com.klbc.app.dao.FoodDao <|.. com.klbc.app.dao.FoodDaoImpl
+com.klbc.app.dao.UserDao <|.. com.klbc.app.dao.UserDaoImpl
+@enduml

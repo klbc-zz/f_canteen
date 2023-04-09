@@ -1,0 +1,41 @@
+@startuml
+class com.klbc.sys.servlet.saleListService {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.UserServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.foodTypeListServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.indexServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.foodServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.LoginServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.sys.servlet.StaffServlet {
+}
+class com.klbc.sys.servlet.orderServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+
+
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.saleListService
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.UserServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.foodTypeListServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.indexServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.foodServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.LoginServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.sys.servlet.orderServlet
+@enduml

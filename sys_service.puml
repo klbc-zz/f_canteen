@@ -1,0 +1,74 @@
+@startuml
+class com.klbc.sys.service.FoodServiceImpl {
+~ FoodDao foodDao
++ List<Food> find(String,String)
++ Food findById(int)
++ void update(Food)
++ Food findByFoodName(String)
++ void save(Food)
+}
+class com.klbc.sys.service.UserServiceImpl {
+~ UserDao userDao
++ User findByLoginNameAndPass(String,String)
++ User selectUserById(Integer)
++ List<User> selectUserlist(String,int,int,int)
++ int addUser(User)
++ int delUser(Integer)
++ int updateUser(User)
++ int getUserByName(String)
+}
+interface com.klbc.sys.service.FoodTypeService {
+~ List<FoodType> find(String,String)
+~ FoodType findByFoodName(String)
+~ void save(FoodType)
+~ FoodType findById(int)
+~ void update(FoodType)
+}
+interface com.klbc.sys.service.FoodService {
+~ List<Food> find(String,String)
+~ Food findById(int)
+~ void update(Food)
+~ Food findByFoodName(String)
+~ void save(Food)
+}
+interface com.klbc.sys.service.UserService {
+~ User findByLoginNameAndPass(String,String)
+~ User selectUserById(Integer)
+~ List<User> selectUserlist(String,int,int,int)
+~ int addUser(User)
+~ int delUser(Integer)
+~ int updateUser(User)
+~ int getUserByName(String)
+}
+class com.klbc.sys.service.OrderServiceImpl {
+~ OrderDao orderDao
++ List<Order> find()
++ Order findById(int)
++ void update(Order)
++ List<Order> findMonth()
++ List<Order> findWeek()
++ List<Order> findDay()
+}
+class com.klbc.sys.service.FoodTypeServiceImpl {
+~ FoodTypeDao foodTypeDao
++ List<FoodType> find(String,String)
++ FoodType findByFoodName(String)
++ void save(FoodType)
++ FoodType findById(int)
++ void update(FoodType)
+}
+interface com.klbc.sys.service.OrderService {
+~ List<Order> find()
+~ Order findById(int)
+~ void update(Order)
+~ List<Order> findMonth()
+~ List<Order> findWeek()
+~ List<Order> findDay()
+}
+
+
+com.klbc.sys.service.FoodService <|.. com.klbc.sys.service.FoodServiceImpl
+com.klbc.sys.service.UserService <|.. com.klbc.sys.service.UserServiceImpl
+com.klbc.sys.service.OrderService <|.. com.klbc.sys.service.OrderServiceImpl
+com.klbc.sys.service.FoodTypeService <|.. com.klbc.sys.service.FoodTypeServiceImpl
+@enduml

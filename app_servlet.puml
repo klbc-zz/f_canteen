@@ -1,0 +1,39 @@
+@startuml
+class com.klbc.app.servlet.RegisterServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.orderServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.loginServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.ShopCarServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.commentServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.indexServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+class com.klbc.app.servlet.LoginOutServlet {
+- {static} long serialVersionUID
+# void service(HttpServletRequest,HttpServletResponse)
+}
+
+
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.RegisterServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.orderServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.loginServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.ShopCarServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.commentServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.indexServlet
+javax.servlet.http.HttpServlet <|-- com.klbc.app.servlet.LoginOutServlet
+@enduml
