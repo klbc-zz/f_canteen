@@ -113,7 +113,7 @@
 
     <!--        筛选-->
     <div>
-      <form action="${pageContext.request.contextPath}/sys/userList.do" method="get">
+      <form action="${pageContext.request.contextPath}/sys/staffList.do" method="get">
         <input type="hidden" name="method" value="list">
         <input id="keyword" name="keyword" type="text" placeholder="请输入用户名" value="${keyword }">
         <input type="submit" value="搜索">

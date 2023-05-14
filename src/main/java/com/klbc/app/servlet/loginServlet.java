@@ -3,6 +3,7 @@ package com.klbc.app.servlet;
 import com.klbc.app.service.UserServiceImpl;
 import com.klbc.app.pojo.User;
 import com.klbc.app.service.UserService;
+import com.klbc.sys.util.MD5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +27,7 @@ public class loginServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -39,13 +41,15 @@ public class loginServlet extends HttpServlet {
 		
 		if(method!=null &&method.equals("submitTable")) {
 			//提交登陆表单
-			if(name != null && !name.equals("")) {
+			if(name != null && !name.equals("")&&password!=null) {
 				UserService userService = new UserServiceImpl();
+				password = MD5.convertMD5(password);
 				User user  = userService.findByLoginNameAndPass(name,password);
 				System.out.println("user"+user);
 				if(user !=null) {
 					//保存在session中的数据是在整个浏览器中有效，默认30分钟
 					request.getSession().setAttribute("session_user", user);
+					request.getSession().setAttribute("flag", 0);
 					//登陆成功 跳转到首页
 					response.sendRedirect(getServletContext().getContextPath()+"/app/index.do");
 				}else {

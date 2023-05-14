@@ -148,12 +148,12 @@
 
     <div class="sysright">
         <!-- from标签必须设置  enctype="multipart/form-data" 默认post -->
-        <form id="form" action="${pageContext.request.contextPath}/sys/userList.do" method="post" enctype="multipart/form-data">
+        <form id="form" action="${pageContext.request.contextPath}/sys/staffList.do" method="post" enctype="multipart/form-data">
             <input type="hidden" name="method" value="addSubmit">
             <!--        <img src="../img/demo1.jpg" alt="picture" width="300" height="200">-->
             <!-- 本段标题（分段标题） -->
             <div >
-                <a href="${pageContext.request.contextPath}/sys/userList.do?method=list"><img src="${pageContext.request.contextPath}/img/sys/back.jpg" style="width: 30px;height: 30px"></a>&nbsp;
+                <a href="${pageContext.request.contextPath}/sys/staffList.do?method=list"><img src="${pageContext.request.contextPath}/img/sys/back.jpg" style="width: 30px;height: 30px"></a>&nbsp;
 
             </div>
             <!-- 本段表单字段 -->
@@ -177,6 +177,13 @@
                     <tr>
                         <td>电话</td>
                         <td><input type="text" name="phone" value="" id="phone" /></td>
+                    </tr>
+                    <tr>
+                        <td>性别</td>
+                        <td>
+                            男 <input type="radio" value="1" name="gender" checked="checked" />
+                            女 <input type="radio" value="0" name="gender" />
+                        </td>
                     </tr>
 
 

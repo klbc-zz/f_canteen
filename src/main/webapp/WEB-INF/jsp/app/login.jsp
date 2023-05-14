@@ -41,7 +41,7 @@
         </c:if>
         <c:if test="${ empty session_user }">
             <li class="bannerli">
-                <a href="${pageContext.request.contextPath}/app/register.html">注册</a>
+                <a href="${pageContext.request.contextPath}/app/register.do?method=toPage">注册</a>
             </li>
             <li class="bannerli">
                 <a href="${pageContext.request.contextPath}/app/login.do">登录</a>

@@ -3,6 +3,7 @@ package com.klbc.sys.servlet;
 import com.klbc.sys.bean.User;
 import com.klbc.sys.service.UserService;
 import com.klbc.sys.service.UserServiceImpl;
+import com.klbc.sys.util.MD5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +27,7 @@ public class LoginServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -41,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 			//提交登陆表单
 			if(name != null && !name.equals("")) {
 				UserService userService = new UserServiceImpl();
+				password = MD5.convertMD5(password);
 				User user  = userService.findByLoginNameAndPass(name,password);
 				System.out.println("user"+user);
 				if(user !=null&&(user.getUserRole()<=1)) {

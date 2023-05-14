@@ -48,6 +48,17 @@
 			window.location.href = "${pageContext.request.contextPath}/app/order.do?method=order&total="+"${total}"+"&userId="+userId;
 		}
 	</script>
+
+    <c:if test="${ flag==0}">
+        <script>
+            alert("登录成功，可以开始点餐了！");
+        </script>
+    </c:if>
+    <c:if  test="${ flag==1}">
+        <script>
+            alert("注册成功，可以开始点餐了！");
+        </script>
+    </c:if>
 	
 </head>
 <body>
@@ -118,7 +129,7 @@
         <div id="leftLogin" class="login">
         <c:if test="${not empty session_user }">
         	<div>
-        		Hi~${session_user.userName} welcome!
+        		Hi~${session_user.userName} 欢迎点餐!
         	</div>
         </c:if>
         <c:if test="${ empty session_user }">

@@ -6,6 +6,7 @@ import com.klbc.sys.bean.Food;
 import com.klbc.sys.bean.FoodType;
 import com.klbc.sys.bean.User;
 import com.klbc.sys.service.*;
+import com.klbc.sys.util.MD5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -37,6 +38,7 @@ public class UserServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+
 
 
     /**
@@ -99,7 +101,7 @@ public class UserServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        if(gender!=null) user.setGender(Integer.valueOf(gender));else user.setGender(0);
+        if(gender!=null) user.setGender(Integer.valueOf(gender));else user.setGender(1);
         if(phone!=null) user.setPhone(phone);else user.setPhone("null");
         user.setUserRole(2);
         user.setCreationDate(new Date());
@@ -129,8 +131,10 @@ public class UserServlet extends HttpServlet {
                 request.setAttribute("flag",1);
                 request.getRequestDispatcher("/WEB-INF/jsp/sys/userAdd.jsp").forward(request, response);
             }
+            userPassword = MD5.convertMD5(userPassword);
+            user.setUserPassword(userPassword);
             //保存用户相关信息到数据库
-            else if(userService.addUser(user)==0){
+            if(userService.addUser(user)==0){
                 request.setAttribute("flag",1);
                 request.getRequestDispatcher("/WEB-INF/jsp/sys/userAdd.jsp").forward(request, response);
             }

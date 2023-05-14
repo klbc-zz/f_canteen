@@ -182,6 +182,13 @@
                         <td>电话</td>
                         <td><input type="text" name="phone"  value="${user.phone }" id="phone" /></td>
                     </tr>
+                    <tr>
+                        <td>性别</td>
+                        <td>
+                            男 <input type="radio" value="1" name="gender" checked="checked" />
+                            女 <input type="radio" value="0" name="gender" />
+                        </td>
+                    </tr>
 
 
                 </table>

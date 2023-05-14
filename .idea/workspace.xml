@@ -9,155 +9,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6df94d3-1880-4e65-bdbe-ba8827ee42f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/Basedao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/CommentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/CommentDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/FoodDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/FoodDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/FoodTypeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/FoodTypeDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/JDBCDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/OrderDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/FoodType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/PageBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/FoodService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/FoodServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/FoodTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/FoodTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/LoginOutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/RegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/ShopCarServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/commentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/indexServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/loginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/orderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/my_config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/bean/Feedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/bean/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/bean/FoodType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/bean/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/bean/OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/FeedbackDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/FeedbackDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/FoodDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/FoodDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/FoodTypeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/FoodTypeDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/OrderDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/dao/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/FeedbackService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/FeedbackServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/FoodService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/FoodServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/FoodTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/FoodTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/FeedbackServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/StaffServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/UserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/foodServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/foodTypeListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/indexServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/orderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/saleListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/util/MyUTF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/util/ServletContextListen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/util/JDBCUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/util/JWTUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/util/PageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/comment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/orderItem.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/userFeedback.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/userFeedbackList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/feedbackList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/foodAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/foodList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/foodTypeAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/foodTypeList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/foodTypeUpdate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/foodUpdate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/loginsys.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/orderList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/saleList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffUpdate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userUpdate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/c3p0-0.9.5.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/mchange-commons-java-0.2.19.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/standard.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/app/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/sys/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/demo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/凉拌青瓜.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/剁椒鱼头.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/家常豆腐.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/小白菜.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/干锅牛肉.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/干锅肉.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/手撕包菜.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/梅菜扣肉.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/橙汁.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/清炒菠菜.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/炒豆芽.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/素什锦.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/紫菜蒜苔.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/紫菜蛋花汤.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/红烧排骨.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/红烧茄子.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/莴笋丝.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/酸菜魔芋.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/酸菜鱼.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/青椒肉丝.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/青椒鸡蛋.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/韭菜鸡蛋.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/鱼香肉丝.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/麻辣小龙虾.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/app/food/麻辣豆腐.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/sys/back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.4.1.min.js" afterDir="false" />
+    <list default="true" id="b6df94d3-1880-4e65-bdbe-ba8827ee42f5" name="Changes" comment="基本搭建完成">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/一、可行性研究报告.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/七、食堂管理系统用户手册.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/三、需求规格说明书.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/二、项目计划书.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/五、软件设计说明书.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/六、测试分析报告.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/四、体系结构设计说明书.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/util/MD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/TestofMD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.md5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/loginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/klbc/app/servlet/loginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/StaffServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/StaffServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/klbc/sys/servlet/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/app/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/staffUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sys/userUpdate.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,13 +46,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -193,40 +75,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/code/java/jsp/f_canteen&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/code/java/jsp/f_canteen/f_canteen/src/main/webapp/js",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.klbc.sys.service" />
       <recent name="com.klbc.sys.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\java\jsp\f_canteen\f_canteen\src\main\webapp\js" />
+      <recent name="E:\code\java\jsp\f_canteen\f_canteen\doc" />
       <recent name="E:\code\java\jsp\f_canteen\f_canteen\src\main\java\com\klbc" />
       <recent name="E:\code\java\jsp\f_canteen\f_canteen\src\main\webapp\WEB-INF" />
       <recent name="E:\code\java\jsp\f_canteen\f_canteen\src\main\webapp" />
-      <recent name="E:\code\java\jsp\f_canteen\f_canteen\src\main\java\com\klbc\sys\bean" />
-      <recent name="E:\code\java\jsp\f_canteen\f_canteen\src\main\java\com\klbc\dao" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.klbc.app" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.73">
+    <configuration name="TestofMD5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TestofMD5" />
+      <module name="f_canteen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/f_canteen_war/WEB-INF/jsp/app/index.jsp">
       <method v="2" />
     </configuration>
@@ -318,11 +213,13 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestofMD5" />
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.73" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestofMD5" />
         <item itemvalue="JavaScript Debug.index.jsp" />
       </list>
     </recent_temporary>
@@ -362,8 +259,32 @@
       <workItem from="1680875314376" duration="1915000" />
       <workItem from="1680909382189" duration="8765000" />
       <workItem from="1681004322303" duration="5336000" />
-      <workItem from="1681010017195" duration="18656000" />
+      <workItem from="1681010017195" duration="20326000" />
+      <workItem from="1681221714768" duration="1246000" />
+      <workItem from="1681372590552" duration="6887000" />
+      <workItem from="1681905709998" duration="599000" />
+      <workItem from="1682003709613" duration="625000" />
+      <workItem from="1682035270794" duration="611000" />
+      <workItem from="1682321722664" duration="599000" />
+      <workItem from="1683089897722" duration="1232000" />
+      <workItem from="1683790530512" duration="601000" />
+      <workItem from="1684032195365" duration="10298000" />
     </task>
+    <task id="LOCAL-00001" summary="基本搭建完成">
+      <created>1681044834525</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681044834525</updated>
+    </task>
+    <task id="LOCAL-00002" summary="基本搭建完成">
+      <created>1681044859763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681044859763</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +300,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基本搭建完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本搭建完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

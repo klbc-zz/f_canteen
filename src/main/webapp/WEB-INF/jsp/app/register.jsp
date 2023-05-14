@@ -8,6 +8,7 @@
     <title>注册</title>
      <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/app/index.css">
     <script src="${pageContext.request.contextPath}/js/jquery-3.4.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.md5.js"></script>
 </head>
 <body>
 <div id="banner">
@@ -41,7 +42,8 @@
 <div class="register">
     <h2 style="text-align: center">注册</h2>
     <div class="registerForm" >
-    <form method="post" action="index.html">
+    <form method="post" action="${pageContext.request.contextPath}/app/register.do">
+        <input type="hidden"  name="method" value="submitTable">
         <input type="text" name="name" placeholder="用户名"><br>
         <input type="text" name="phone" placeholder="手机号"><br>
         <input type="password" name="password" placeholder="密码"><br>

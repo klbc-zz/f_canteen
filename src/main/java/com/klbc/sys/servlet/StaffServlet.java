@@ -3,6 +3,7 @@ package com.klbc.sys.servlet;
 import com.klbc.sys.bean.User;
 import com.klbc.sys.service.UserService;
 import com.klbc.sys.service.UserServiceImpl;
+import com.klbc.sys.util.MD5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -32,6 +33,7 @@ public class StaffServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+
 
 
     /**
@@ -116,16 +118,19 @@ public class StaffServlet extends HttpServlet {
             }else {response.getWriter().print("success");}
 
         }else if(method !=null && !method.equals("") && method.equals("addSubmit")) {
+
             //添加用户
-            System.out.println("************添加用户***************");
+            System.out.println("************添加员工***************");
             //判断密码是否正确
             if(user.getUserPassword()==null||user.getUserPassword().equals("")||!user.getUserPassword().equals(okPassword)
                     ||user.getUserName()==null){
                 request.setAttribute("flag",1);
                 request.getRequestDispatcher("/WEB-INF/jsp/sys/staffAdd.jsp").forward(request, response);
             }
+            userPassword = MD5.convertMD5(userPassword);
+            user.setUserPassword(userPassword);
             //保存用户相关信息到数据库
-            else if(userService.addUser(user)==0){
+            if(userService.addUser(user)==0){
                 request.setAttribute("flag",1);
                 request.getRequestDispatcher("/WEB-INF/jsp/sys/staffAdd.jsp").forward(request, response);
             }

@@ -129,7 +129,7 @@
             <a  href="${pageContext.request.contextPath}/sys/userList.do?method=list" class="active">用户管理</a>
         </li>
         <li class="sysli">
-            <a  href="${pageContext.request.contextPath}/sys/List.do?method=list" >员工管理</a>
+            <a  href="${pageContext.request.contextPath}/sys/staffList.do?method=list" >员工管理</a>
         </li>
         <li class="sysli">
             <a  href="${pageContext.request.contextPath}/sys/foodTypeList.do?method=list">菜系管理</a>
@@ -181,6 +181,13 @@
                     <tr>
                         <td>电话</td>
                         <td><input type="text" name="phone"  value="${user.phone }" id="phone" /></td>
+                    </tr>
+                    <tr>
+                        <td>性别</td>
+                        <td>
+                            男 <input type="radio" value="1" name="gender" checked="checked" />
+                            女 <input type="radio" value="0" name="gender" />
+                        </td>
                     </tr>
 
 
